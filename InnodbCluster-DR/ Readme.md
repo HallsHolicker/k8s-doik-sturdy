@@ -539,3 +539,8 @@ drcluster-1	2001	2	Luis
 drcluster-2	2002	1	Luis
 drcluster-2	2002	2	Luis
 ```
+
+
+# 참조 사이트 #
+1. [Mysql](https://dev.mysql.com/doc/mysql-operator/en/mysql-operator-innodbcluster.html)
+2. [Blog](http://www.dataarchitect.cloud/mysql-innodb-cluster-setup-with-replication-between-2-innodb-clusters/)
