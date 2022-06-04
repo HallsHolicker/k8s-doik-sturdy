@@ -1,0 +1,16 @@
+apiVersion: mysql.oracle.com/v2
+kind: InnoDBCluster
+metadata:
+  name: drcluster
+spec:
+  secretName: mypwds
+  tlsUseSelfSigned: true
+  instances: 1
+  baseServerId: 2000
+  router:
+    instances: 1
+  initDB:
+    clone:
+      donorUrl: root@maincluster.default.svc.cluster.local:3306
+      secretKeyRef:
+        name: mypwds
