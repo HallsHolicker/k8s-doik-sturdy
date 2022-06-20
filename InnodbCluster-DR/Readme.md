@@ -22,7 +22,7 @@ manifest 자료는 files에 있지만 공식 사이트 가이드에 나오는 �
 
 Custom Resources Definition(CRD)를 배포하겠습니다.
 
-`kubectl apply -f kubectl apply -f https://raw.githubusercontent.com/mysql/mysql-operator/trunk/deploy/deploy-crds.yaml`
+`kubectl apply -f https://raw.githubusercontent.com/mysql/mysql-operator/trunk/deploy/deploy-crds.yaml`
 
 ```
 // Output is similar to:

@@ -1,0 +1,31 @@
+apiVersion: elasticsearch.k8s.elastic.co/v1
+kind: Elasticsearch
+metadata:
+  name: quickstart
+spec:
+  version: 8.2.3
+  nodeSets:
+  - name: master-node
+    count: 1
+    config:
+      node.roles: ["master"]
+    podTemplate:
+      spec:
+        initContainers:
+        - name: systctl
+          securityContext:
+            privileged: true
+            runAsUser: 0
+          command: ['sh', '-c', 'sysctl -w vm.max_map_count=262144']
+  - name: data-node
+    count: 2
+    config:
+      node.roles: ["data"]
+    podTemplate:
+      spec:
+        initContainers:
+        - name: systctl
+          securityContext:
+            privileged: true
+            runAsUser: 0
+          command: ['sh', '-c', 'sysctl -w vm.max_map_count=262144']
